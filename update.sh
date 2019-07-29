@@ -1,0 +1,2 @@
+./checkout.sh
+./build.sh
