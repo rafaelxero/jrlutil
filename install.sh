@@ -228,9 +228,4 @@ git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc_ros
 cd /$SRC_DIR/catkin_ws
 catkin_make
 
-if [ -n $HMC_BUILD_DIR ]
-	then 
-		cd $HMC_BUILD_DIR
-		make -j $NUBMBER_OF_CORES
-		make -j$NUBMBER_OF_CORES install
-fi
+./build_hmc.sh

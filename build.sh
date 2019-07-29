@@ -43,9 +43,4 @@ cd /$SRC_DIR/mc_openrtm/build
 make -j $NUBMBER_OF_CORES
 make -j$NUBMBER_OF_CORES install
 
-if [ -n $HMC_BUILD_DIR ]
-	then 
-		cd $HMC_BUILD_DIR
-		make -j $NUBMBER_OF_CORES
-		make -j$NUBMBER_OF_CORES install
-fi
+./build_hmc.sh
