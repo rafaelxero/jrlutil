@@ -54,10 +54,9 @@ if [ "$(rosversion -d)" != "kinetic" ]
 		sudo apt install ros-kinetic-desktop-full python-rosinstall
 		sudo rosdep init
 		rosdep update
+                echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+                source ~/.bashrc                
 fi
-
-echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
 
 #Create Catkin Workspace
 mkdir -p catkin_ws/src
