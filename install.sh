@@ -96,9 +96,11 @@ git checkout topic/HRG
 
 #Build 
 export PBUI=OFF
+makeLevel="sudo make"
 if [ $INSTALL_DIR == $HOME/openrtp ]
 	then 
 		export PBUI=ON
+		makeLevel="make"
 fi
 
 cd /$SRC_DIR/Eigen3ToPython/
@@ -112,7 +114,7 @@ sudo apt-get install python-pip
 pip install Cython
 pip install coverage
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/eigen-qld/
 mkdir build
@@ -122,7 +124,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/eigen-lssol/
 mkdir build
@@ -132,7 +134,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR//tinyxml2/
 mkdir build
@@ -142,7 +144,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/SpaceVecAlg/
 mkdir build
@@ -152,7 +154,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/sch-core-python/
 mkdir build
@@ -162,7 +164,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/RBDyn/
 mkdir build
@@ -172,7 +174,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/mc_rbdyn_urdf/
 mkdir build
@@ -182,7 +184,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/Tasks/
 mkdir build
@@ -192,7 +194,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/catkin_ws/
 catkin_make
@@ -205,7 +207,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/mc_hrp5_p/
 mkdir build
@@ -215,7 +217,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/mc_openrtm/
 mkdir build
@@ -225,7 +227,7 @@ cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
-make -j$NUBMBER_OF_CORES install
+$makeLevel -j$NUBMBER_OF_CORES install
 
 cd /$SRC_DIR/catkin_ws/src
 git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc_ros
