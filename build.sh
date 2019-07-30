@@ -3,7 +3,7 @@ source config.sh
 scriptDirectory="$(pwd)"
 
 makeLevel="sudo make"
-if [ $INSTALL_DIR == $HOME/openrtp ]
+if [[ $INSTALL_DIR =~ $HOME ]]
 	then 
 		makeLevel="make"
 fi

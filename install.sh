@@ -97,7 +97,7 @@ git checkout topic/HRG
 #Build 
 export PBUI=OFF
 makeLevel="sudo make"
-if [ $INSTALL_DIR == $HOME/openrtp ]
+if [[ $INSTALL_DIR =~ $HOME ]]
 	then 
 		export PBUI=ON
 		makeLevel="make"
