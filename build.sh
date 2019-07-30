@@ -1,5 +1,6 @@
 ./config.sh
 source config.sh
+scriptDirectory="$(pwd)"
 
 makeLevel="sudo make"
 if [ $INSTALL_DIR == $HOME/openrtp ]
@@ -49,4 +50,5 @@ cd /$SRC_DIR/mc_openrtm/build
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
+cd $scriptDirectory
 ./build_hmc.sh

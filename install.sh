@@ -3,6 +3,7 @@ source config.sh
 
 mkdir /$SRC_DIR
 cd /$SRC_DIR
+scriptDirectory="$(pwd)"
 
 #Clone repos
 git clone --recursive https://github.com/jrl-umi3218/Eigen3ToPython
@@ -233,4 +234,5 @@ git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc_ros
 cd /$SRC_DIR/catkin_ws
 catkin_make
 
+cd $scriptDirectory
 ./build_hmc.sh
