@@ -73,8 +73,8 @@ git clone --recursive https://gite.lirmm.fr/mc-hrp2/hrp2_drc
 mkdir hrp5
 cd hrp5/
 git clone --recursive https://gite.lirmm.fr/mc-hrp5/hrp5_p_description.git
-cd /$SRC_DIR/catkin_ws/src/
-git clone --recursive https://gite.lirmm.fr/mc-hrp4/hrp4
+#cd /$SRC_DIR/catkin_ws/src/
+#git clone --recursive https://gite.lirmm.fr/mc-hrp4/hrp4
 cd /$SRC_DIR/catkin_ws/src/
 git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc_ros_data
 
