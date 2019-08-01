@@ -1,8 +1,8 @@
 ./config.sh
 source config.sh
 
-mkdir /$SRC_DIR
-cd /$SRC_DIR
+mkdir $SRC_DIR
+cd $SRC_DIR
 scriptDirectory="$(pwd)"
 
 #Clone repos
@@ -22,21 +22,21 @@ cmake --build .
 ctest .
 sudo cmake --build . --target install
 
-cd /$SRC_DIR
+cd $SRC_DIR
 git clone --recursive  https://github.com/leethomason/tinyxml2 
 git clone --recursive https://github.com/jrl-umi3218/sch-core-python
 cd sch-core-python/
 git remote add rafaelxero https://github.com/rafaelxero/sch-core-python
 git fetch rafaelxero
 git checkout -b topic/HRG --track rafaelxero/topic/HRG
-cd /$SRC_DIR
+cd $SRC_DIR
 git clone --recursive https://github.com/jrl-umi3218/SpaceVecAlg
 git clone --recursive https://github.com/jrl-umi3218/RBDyn
 cd RBDyn/
 git remote add rafaelxero https://github.com/rafaelxero/RBDyn
 git fetch rafaelxero
 git checkout -b topic/HRG --track rafaelxero/topic/HRG
-cd /$SRC_DIR
+cd $SRC_DIR
 git clone --recursive https://github.com/jrl-umi3218/mc_rbdyn_urdf.git
 git clone --recursive  https://github.com/jrl-umi3218/Tasks.git
 cd Tasks/
@@ -45,7 +45,7 @@ git fetch rafaelxero
 git checkout -b topic/HRG --track rafaelxero/topic/HRG
 
 
-cd /$SRC_DIR
+cd $SRC_DIR
 if [ "$(rosversion -d)" != "kinetic" ]
 	then
 		#Install ROS
@@ -65,22 +65,22 @@ cd catkin_ws/src
 catkin_init_workspace
 cd ..
 catkin_make
-echo "source /$SRC_DIR/catkin_ws/devel/setup.bash" >> ~/.bashrc
+echo "source $SRC_DIR/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 #Clone catkin workspace repos
-cd /$SRC_DIR/catkin_ws/src/
+cd $SRC_DIR/catkin_ws/src/
 git clone --recursive https://gite.lirmm.fr/mc-hrp2/hrp2_drc
 mkdir hrp5
 cd hrp5/
 git clone --recursive https://gite.lirmm.fr/mc-hrp5/hrp5_p_description.git
-#cd /$SRC_DIR/catkin_ws/src/
+#cd $SRC_DIR/catkin_ws/src/
 #git clone --recursive https://gite.lirmm.fr/mc-hrp4/hrp4
-cd /$SRC_DIR/catkin_ws/src/
+cd $SRC_DIR/catkin_ws/src/
 git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc_ros_data
 
 
-cd /$SRC_DIR/
+cd $SRC_DIR/
 git config --global url."https://gite.lirmm.fr/".insteadOf git@gite.lirmm.fr:
 git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc.git
 cd mc_rtc/
@@ -103,7 +103,7 @@ if [[ $INSTALL_DIR == $HOME* ]]
 		makeLevel="make"
 fi
 
-cd /$SRC_DIR/Eigen3ToPython/
+cd $SRC_DIR/Eigen3ToPython/
 mkdir build
 cd build/
 cmake ..
@@ -116,7 +116,7 @@ pip install coverage
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/eigen-qld/
+cd $SRC_DIR/eigen-qld/
 mkdir build
 cd build/
 cmake ..
@@ -126,7 +126,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/eigen-lssol/
+cd $SRC_DIR/eigen-lssol/
 mkdir build
 cd build/
 cmake ..
@@ -136,7 +136,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR//tinyxml2/
+cd $SRC_DIR//tinyxml2/
 mkdir build
 cd build/
 cmake ..
@@ -146,7 +146,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/SpaceVecAlg/
+cd $SRC_DIR/SpaceVecAlg/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -156,7 +156,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/sch-core-python/
+cd $SRC_DIR/sch-core-python/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -166,7 +166,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/RBDyn/
+cd $SRC_DIR/RBDyn/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -176,7 +176,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/mc_rbdyn_urdf/
+cd $SRC_DIR/mc_rbdyn_urdf/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -186,7 +186,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/Tasks/
+cd $SRC_DIR/Tasks/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -196,10 +196,10 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/catkin_ws/
+cd $SRC_DIR/catkin_ws/
 catkin_make
 
-cd /$SRC_DIR/mc_rtc/
+cd $SRC_DIR/mc_rtc/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -209,7 +209,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/mc_hrp5_p/
+cd $SRC_DIR/mc_hrp5_p/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -219,7 +219,7 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/mc_openrtm/
+cd $SRC_DIR/mc_openrtm/
 mkdir build
 cd build/
 cmake -B. -H..
@@ -229,9 +229,9 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd /$SRC_DIR/catkin_ws/src
+cd $SRC_DIR/catkin_ws/src
 git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc_ros
-cd /$SRC_DIR/catkin_ws
+cd $SRC_DIR/catkin_ws
 catkin_make
 
 cd $scriptDirectory
