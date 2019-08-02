@@ -17,3 +17,5 @@ To only rebuild the suite do:
 
 To only rebuild hmc do:
 `./build_hmc.sh`
+
+Note: If you wish to re-run `./install.sh`, first remove any directories of repositories that you wish to be recloned. 
