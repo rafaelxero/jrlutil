@@ -56,7 +56,7 @@ if [ "$(rosversion -d)" != "kinetic" ]
 		sudo rosdep init
 		rosdep update
                 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-                source ~/.bashrc                
+                source /opt/ros/kinetic/setup.bash            
 fi
 
 #Create Catkin Workspace
@@ -66,7 +66,7 @@ catkin_init_workspace
 cd ..
 catkin_make
 echo "source $SRC_DIR/catkin_ws/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+source $SRC_DIR/catkin_ws/devel/setup.bash
 
 #Clone catkin workspace repos
 cd $SRC_DIR/catkin_ws/src/
