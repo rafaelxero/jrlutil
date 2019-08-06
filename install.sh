@@ -11,17 +11,6 @@ git clone --recursive  https://github.com/jrl-umi3218/eigen-qld
 git config --global credential.helper cache #allows for only a single login
 git clone --recursive https://gite.lirmm.fr/multi-contact/eigen-lssol.git #Requires login
 
-wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
-unzip 1.1.5.zip
-#From nanomsg-1.1.5 README’s Quick Installation.
-cd nanomsg-1.1.5/
-mkdir build
-cd build
-cmake ..
-cmake --build .
-ctest .
-sudo cmake --build . --target install
-
 cd $SRC_DIR
 git clone --recursive  https://github.com/leethomason/tinyxml2 
 git clone --recursive https://github.com/jrl-umi3218/sch-core-python
@@ -102,6 +91,18 @@ if [[ $INSTALL_DIR == $HOME* ]]
 		export PBUI=ON
 		makeLevel="make"
 fi
+
+cd $INSTALL_DIR
+wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
+unzip 1.1.5.zip
+#From nanomsg-1.1.5 README’s Quick Installation.
+cd nanomsg-1.1.5/
+mkdir build
+cd build
+cmake ..
+cmake --build .
+ctest .
+$makeLevel cmake --build . --target install
 
 cd $SRC_DIR/Eigen3ToPython/
 mkdir build
