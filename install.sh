@@ -196,6 +196,12 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
+#remove mc_rtc_ros if it exists
+if [ -d "$SRC_DIR/catkin_ws/src/mc_rtc_ros" ]
+then
+	sudo rm -r $SRC_DIR/catkin_ws/src/mc_rtc_ros
+fi
+
 cd $SRC_DIR/catkin_ws/
 catkin_make
 
