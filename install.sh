@@ -48,6 +48,12 @@ if [ "$(rosversion -d)" != "kinetic" ]
                 source /opt/ros/kinetic/setup.bash            
 fi
 
+#remove mc_rtc_ros if it exists
+if [ -d "$SRC_DIR/catkin_ws/src/mc_rtc_ros" ]
+then
+	sudo rm -r $SRC_DIR/catkin_ws/src/mc_rtc_ros
+fi
+
 #Create Catkin Workspace
 mkdir -p catkin_ws/src
 cd catkin_ws/src
@@ -196,12 +202,6 @@ cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
-
-#remove mc_rtc_ros if it exists
-if [ -d "$SRC_DIR/catkin_ws/src/mc_rtc_ros" ]
-then
-	sudo rm -r $SRC_DIR/catkin_ws/src/mc_rtc_ros
-fi
 
 cd $SRC_DIR/catkin_ws/
 catkin_make
