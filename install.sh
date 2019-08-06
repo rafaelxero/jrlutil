@@ -90,6 +90,9 @@ cd mc_openrtm/
 git checkout topic/HRG
 
 #Build 
+
+sudo apt-get install libgeos++-dev
+
 export PBUI=OFF
 makeLevel="sudo make"
 if [[ $INSTALL_DIR == $HOME* ]]
