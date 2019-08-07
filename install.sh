@@ -5,7 +5,7 @@ mkdir $SRC_DIR
 cd $SRC_DIR
 scriptDirectory="$(pwd)"
 
-#Clone repos
+echo "Clone repos"
 git clone --recursive https://github.com/jrl-umi3218/Eigen3ToPython
 git clone --recursive  https://github.com/jrl-umi3218/eigen-qld
 git config --global credential.helper cache #allows for only a single login
@@ -37,7 +37,7 @@ git checkout -b topic/HRG --track rafaelxero/topic/HRG
 cd $SRC_DIR
 if [ "$(rosversion -d)" != "kinetic" ]
 	then
-		#Install ROS
+		echo "Install ROS"
 		sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 		wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 		sudo apt update
@@ -48,13 +48,13 @@ if [ "$(rosversion -d)" != "kinetic" ]
                 source /opt/ros/kinetic/setup.bash            
 fi
 
-#remove mc_rtc_ros if it exists
+echo "remove mc_rtc_ros if it exists"
 if [ -d "$SRC_DIR/catkin_ws/src/mc_rtc_ros" ]
 then
 	sudo rm -r $SRC_DIR/catkin_ws/src/mc_rtc_ros
 fi
 
-#Create Catkin Workspace
+echo "Create Catkin Workspace"
 mkdir -p catkin_ws/src
 cd catkin_ws/src
 catkin_init_workspace
@@ -63,7 +63,7 @@ catkin_make
 echo "source $SRC_DIR/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source $SRC_DIR/catkin_ws/devel/setup.bash
 
-#Clone catkin workspace repos
+echo "Clone catkin workspace repos"
 cd $SRC_DIR/catkin_ws/src/
 git clone --recursive https://gite.lirmm.fr/mc-hrp2/hrp2_drc
 mkdir hrp5
@@ -89,7 +89,7 @@ git clone --recursive https://gite.lirmm.fr/multi-contact/mc_openrtm.git
 cd mc_openrtm/
 git checkout topic/HRG
 
-#Build 
+echo "Build"
 
 sudo apt-get install libgeos++-dev
 
@@ -207,9 +207,11 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
+echo "building catkin workspace"
 cd $SRC_DIR/catkin_ws/
 catkin_make
 
+echo "building mc_rtc"
 cd $SRC_DIR/mc_rtc/
 mkdir build
 cd build/
@@ -240,10 +242,14 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
+echo "cloning mc_rtc_ros"
 cd $SRC_DIR/catkin_ws/src
 git clone --recursive https://gite.lirmm.fr/multi-contact/mc_rtc_ros
+
+echo "building catkin workspace"
 cd $SRC_DIR/catkin_ws
 catkin_make
+
 
 cd $scriptDirectory
 ./build_hmc.sh
