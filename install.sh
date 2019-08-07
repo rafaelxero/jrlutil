@@ -101,7 +101,7 @@ if [[ $INSTALL_DIR == $HOME* ]]
 		makeLevel="make"
 fi
 
-cd $INSTALL_DIR
+cd $SRC_DIR
 wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
 unzip 1.1.5.zip
 #From nanomsg-1.1.5 README’s Quick Installation.
@@ -109,6 +109,7 @@ cd nanomsg-1.1.5/
 mkdir build
 cd build
 cmake ..
+cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake --build .
 ctest .
 $makeLevel cmake --build . --target install
