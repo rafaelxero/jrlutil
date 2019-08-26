@@ -12,6 +12,8 @@ set -E -o pipefail
 
 source config.sh
 
+git config --global credential.helper cache #allows for only a single login
+
 mkdir $SRC_DIR
 cd $SRC_DIR
 scriptDirectory="$(pwd)"
@@ -19,7 +21,6 @@ scriptDirectory="$(pwd)"
 echo "Clone repos"
 git clone --recursive https://github.com/jrl-umi3218/Eigen3ToPython
 git clone --recursive  https://github.com/jrl-umi3218/eigen-qld
-git config --global credential.helper cache #allows for only a single login
 git clone --recursive https://gite.lirmm.fr/multi-contact/eigen-lssol.git #Requires login
 
 cd $SRC_DIR
