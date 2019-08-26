@@ -13,6 +13,7 @@ set -E -o pipefail
 source config.sh
 
 git config --global credential.helper cache #allows for only a single login
+git config --global url."https://gite.lirmm.fr/".insteadOf git@gite.lirmm.fr:
 
 soft_mkcd() 
 {
