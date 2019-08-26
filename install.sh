@@ -1,4 +1,15 @@
-./config.sh
+#!/usr/bin/env bash
+
+
+RUNNINGSCRIPT="$0"
+FILENAME="$(echo $(cd $(dirname "$BASH_SOURCE") && pwd -P)/$(basename "$BASH_SOURCE"))"
+err_report() {
+    echo "Error on line $2:$1"
+    echo "Stopping the script $(basename "$3")."
+}
+trap 'err_report $LINENO $FILENAME $RUNNINGSCRIPT; exit 1' ERR
+set -E -o pipefail 
+
 source config.sh
 
 mkdir $SRC_DIR
