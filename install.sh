@@ -14,8 +14,19 @@ source config.sh
 
 git config --global credential.helper cache #allows for only a single login
 
-mkdir $SRC_DIR
-cd $SRC_DIR
+soft_mkcd() 
+{
+    dirname="$1"
+    if [ ! -d "$dirname" ]; then
+        mkdir -p $dirname
+    fi
+    cd $dirname;
+}
+
+
+
+soft_mkcd $SRC_DIR
+
 scriptDirectory="$(pwd)"
 
 echo "Clone repos"
