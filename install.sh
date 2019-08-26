@@ -28,6 +28,34 @@ soft_mkcd()
 soft_mkcd $SRC_DIR
 
 scriptDirectory="$(pwd)"
+echo "Now in $scriptDirectory"
+
+clone_repo()
+{
+    repoaddress="$1"
+    reponame="$2"
+    
+    if [ ! -d $reponame ]; then 
+        git clone --recursive $repoaddress$reponame
+    else
+        echo "Directory $reponame exists, leaving"
+    fi
+    
+}
+
+cond_checkout()
+{
+    localbranch="$1"
+    trackedbranch="$2"
+    git checkout -b $localbranch --track $trackedbranch ||  git checkout  $localbranch   
+}
+
+failsafe_cmd()
+{
+ $( $@ ) || echo "Error occured, but moving on..."
+}
+
+
 
 echo "Clone repos"
 git clone --recursive https://github.com/jrl-umi3218/Eigen3ToPython
