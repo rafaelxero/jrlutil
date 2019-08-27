@@ -25,10 +25,9 @@ soft_mkcd()
 }
 
 
-
+scriptDirectory="$(pwd)"
 soft_mkcd $SRC_DIR
 
-scriptDirectory="$(pwd)"
 echo "Now in $scriptDirectory"
 
 clone_repo()
