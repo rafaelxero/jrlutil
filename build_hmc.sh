@@ -12,14 +12,15 @@ trap 'err_report $LINENO $FILENAME $RUNNINGSCRIPT; exit 1' ERR
 set -E -o pipefail 
 
 if [ $REBUILD_HMC != 0 ]; then 
-    export CMAKE_ADDITIONAL_OPTIONS="-DBUILD_MULTI_CONTACT_MOTION_SOL=ON"
+    CMAKE_OPT="-DBUILD_MULTI_CONTACT_MOTION_SOLVER=ON"
+    export CMAKE_ADDITIONAL_OPTIONS=$CMAKE_OPT
     export CXXFLAGS="$CXXFLAGS -std=c++11"
     echo "entering $DRCUTIL_DIR"
     cd $DRCUTIL_DIR
     source config.sh
-    if [[ "${CMAKE_ADDITIONAL_OPTIONS[@]}" =~ "-DBUILD_MULTI_CONTACT_MOTION_SOL=ON" ]]; then #checks if the options are taken into account (temporary code)
+    if [[ "${CMAKE_ADDITIONAL_OPTIONS[@]}" =~ $CMAKE_OPT ]]; then #checks if the options are taken into account (temporary code)
         unset CMAKE_ADDITIONAL_OPTIONS
-        export CMAKE_ADDITIONAL_OPTIONS="-DBUILD_MULTI_CONTACT_MOTION_SOL=ON"
+        export CMAKE_ADDITIONAL_OPTIONS=$CMAKE_OPT
         ./install.sh hmc2
     else
         echo "Error in $RUNNINGSCRIPT"
