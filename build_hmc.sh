@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 source config.sh
 
 RUNNINGSCRIPT="$0"
@@ -9,17 +11,18 @@ err_report() {
 trap 'err_report $LINENO $FILENAME $RUNNINGSCRIPT; exit 1' ERR
 set -E -o pipefail 
 
-
-containsElement () {
-
-if [ $REBUILD_HMC != 0 ] then 
+if [ $REBUILD_HMC != 0 ]; then 
+    export CMAKE_ADDITIONAL_OPTIONS="-DBUILD_MULTI_CONTACT_MOTION_SOL=ON"
+    export CXXFLAGS="$CXXFLAGS -std=c++11"
+    echo "entering $DRCUTIL_DIR"
     cd $DRCUTIL_DIR
-    export CMAKE_ADDITIONAL_OPTIONS=($CMAKE_ADDITIONAL_OPTIONS -D BUILD_MULTI_CONTACT_MOTION_SOL=ON -D CMAKE_CXX_FLAGS="$CMAKE_CXX_FLAGS -std=c++11")
     source config.sh
-    if [[ "${CMAKE_ADDITIONAL_OPTIONS[@]}" =~ "c++11" ]]; then #checks if the options are taken into account
-        ./install hmc2
+    if [[ "${CMAKE_ADDITIONAL_OPTIONS[@]}" =~ "-DBUILD_MULTI_CONTACT_MOTION_SOL=ON" ]]; then #checks if the options are taken into account (temporary code)
+        unset CMAKE_ADDITIONAL_OPTIONS
+        export CMAKE_ADDITIONAL_OPTIONS="-DBUILD_MULTI_CONTACT_MOTION_SOL=ON"
+        ./install.sh hmc2
     else
-        echo "Error in build_hmc.sh"
+        echo "Error in $RUNNINGSCRIPT"
         echo "Please check that the value of CMAKE_ADDITIONAL_OPTIONS is not errased in $DRCUTIL_DIR/config.sh"
         echo "After fixing the issue. YOu may directly run this script ./build_hmc.sh"
     fi
