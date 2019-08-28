@@ -256,6 +256,9 @@ echo "building catkin workspace"
 cd $SRC_DIR/catkin_ws/
 catkin_make
 
+
+source $SRC_DIR/catkin_ws/devel/setup.bash
+
 echo "building mc_rtc"
 cd $SRC_DIR/mc_rtc/
 soft_mkcd build
