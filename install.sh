@@ -100,7 +100,6 @@ if [ "$(rosversion -d)" != "kinetic" ]
 		sudo apt install ros-kinetic-desktop-full python-rosinstall
 		failsafe_cmd sudo rosdep init
 		rosdep update
-                echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
                 source /opt/ros/kinetic/setup.bash            
 fi
 
@@ -115,8 +114,7 @@ soft_mkcd catkin_ws/src
 failsafe_cmd catkin_init_workspace
 cd ..
 catkin_make
-echo "source $SRC_DIR/catkin_ws/devel/setup.bash" >> ~/.bashrc
-source $SRC_DIR/catkin_ws/devel/setup.bash
+
 
 echo "Clone catkin workspace repos"
 cd $SRC_DIR/catkin_ws/src/
@@ -298,3 +296,8 @@ catkin_make
 
 cd $scriptDirectory
 ./build_hmc.sh
+
+
+echo "Please add thess lines to your .bashrc"
+echo "source /opt/ros/kinetic/setup.bash" 
+echo "source $SRC_DIR/catkin_ws/devel/setup.bash" 
