@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 
+
 RUNNINGSCRIPT="$0"
 FILENAME="$(echo $(cd $(dirname "$BASH_SOURCE") && pwd -P)/$(basename "$BASH_SOURCE"))"
 err_report() {
@@ -10,6 +11,7 @@ err_report() {
 trap 'err_report $LINENO $FILENAME $RUNNINGSCRIPT; exit 1' ERR
 set -E -o pipefail 
 
+source $DRCUTIL_DIR/setup.bash
 source config.sh
 
 git config --global credential.helper cache #allows for only a single login
@@ -213,6 +215,8 @@ cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
+
+source $SRC_DIR/catkin_ws/devel/setup.bash
 
 cd $SRC_DIR/sch-core-python/
 soft_mkcd build
