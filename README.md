@@ -1,7 +1,7 @@
 # jrlutil
 A set of scripts for installing the jrl software suite. 
 
-First, modify `config.sh` if you want to use different build specifications than the defaults provided.
+First, copy `config.sh.sample` into `config.sh` and modify it if you want to use different build specifications than the defaults provided.
 
 For the initial installation do:
 `./install.sh`
