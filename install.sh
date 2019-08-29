@@ -11,8 +11,9 @@ err_report() {
 trap 'err_report $LINENO $FILENAME $RUNNINGSCRIPT; exit 1' ERR
 set -E -o pipefail 
 
-source $DRCUTIL_DIR/setup.bash
 source config.sh
+source $DRCUTIL_DIR/setup.bash
+
 
 git config --global credential.helper cache #allows for only a single login
 git config --global url."https://gite.lirmm.fr/".insteadOf git@gite.lirmm.fr:
