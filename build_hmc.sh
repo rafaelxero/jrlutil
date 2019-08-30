@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 source config.sh
+source $DRCUTIL_DIR/setup.bash
+source $SRC_DIR/catkin_ws/devel/setup.bash
 
 RUNNINGSCRIPT="$0"
 FILENAME="$(echo $(cd $(dirname "$BASH_SOURCE") && pwd -P)/$(basename "$BASH_SOURCE"))"
@@ -10,6 +12,7 @@ err_report() {
 }
 trap 'err_report $LINENO $FILENAME $RUNNINGSCRIPT; exit 1' ERR
 set -E -o pipefail 
+
 
 if [ $REBUILD_HMC != 0 ]; then 
     CMAKE_OPT="-DBUILD_MULTI_CONTACT_MOTION_SOLVER=ON"
