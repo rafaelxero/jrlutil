@@ -298,9 +298,11 @@ echo "building catkin workspace"
 cd $SRC_DIR/catkin_ws
 catkin_make
 
+if [ $REBUILD_HMC != 0 ]; then 
+    cd $scriptDirectory
+    ./build_hmc.sh    
+fi
 
-cd $scriptDirectory
-./build_hmc.sh
 
 
 echo "Please add thess lines to your .bashrc"
