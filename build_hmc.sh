@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source config.sh
+source /opt/ros/kinetic/setup.bash
 source $DRCUTIL_DIR/setup.bash
 source $SRC_DIR/catkin_ws/devel/setup.bash
 
