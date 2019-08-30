@@ -8,7 +8,7 @@ export INSTALL_DIR=$HOME/openrtp
 export NUBMBER_OF_CORES=$MAKE_THREADS_NUMBER
 export BUILD_TYPE=Release
 
-#Specify REBUILD_HMC build to1 only if you want hmc to be rebuilt
+#Specify REBUILD_HMC build to 1 only if you want hmc to be rebuilt
 export REBUILD_HMC=0
 
 

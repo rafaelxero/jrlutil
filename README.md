@@ -1,7 +1,7 @@
 # jrlutil
 A set of scripts for installing the jrl software suite. 
 
-Executing the following commands are recommended.
+Executing the following commands is recommended.
 `git config --global credential.helper cache #allows for only a single login`
 `git config --global url."https://gite.lirmm.fr/".insteadOf git@gite.lirmm.fr:`
 

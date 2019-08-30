@@ -305,6 +305,6 @@ fi
 
 
 
-echo "Please add thess lines to your .bashrc"
+echo "Please add these lines to your .bashrc"
 echo "source /opt/ros/kinetic/setup.bash" 
 echo "source $SRC_DIR/catkin_ws/devel/setup.bash" 

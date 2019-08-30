@@ -27,8 +27,8 @@ if [[ "${CMAKE_ADDITIONAL_OPTIONS[@]}" =~ $CMAKE_OPT ]]; then #checks if the opt
     ./install.sh hmc2
 else
      echo "Error in $RUNNINGSCRIPT"
-     echo "Please check that the value of CMAKE_ADDITIONAL_OPTIONS is not errased in $DRCUTIL_DIR/config.sh"
-     echo "After fixing the issue. YOu may directly run this script ./build_hmc.sh"
+     echo "Please check that the value of CMAKE_ADDITIONAL_OPTIONS is not erased in $DRCUTIL_DIR/config.sh"
+     echo "After fixing the issue. You may directly run this script ./build_hmc.sh"
 fi
     
 
