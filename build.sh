@@ -62,5 +62,7 @@ cd $SRC_DIR/mc_openrtm/build
 make -j $NUBMBER_OF_CORES
 $makeLevel -j$NUBMBER_OF_CORES install
 
-cd $scriptDirectory
-./build_hmc.sh
+if [ $REBUILD_HMC != 0 ]; then 
+    cd $scriptDirectory
+    ./build_hmc.sh    
+fi
