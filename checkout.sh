@@ -1,4 +1,5 @@
-./config.sh
+#!/usr/bin/env bash
+
 source config.sh
 
 #pull changes
