@@ -178,8 +178,8 @@ cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 sudo apt-get install python-pip
 pip install Cython 
 pip install coverage
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/eigen-qld/
 soft_mkcd build
@@ -187,8 +187,8 @@ cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/eigen-lssol/
 soft_mkcd build
@@ -196,8 +196,8 @@ cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR//tinyxml2/
 soft_mkcd build
@@ -205,8 +205,8 @@ cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/SpaceVecAlg/
 soft_mkcd build
@@ -214,8 +214,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 source $SRC_DIR/catkin_ws/devel/setup.bash
 
@@ -225,8 +225,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/RBDyn/
 soft_mkcd build
@@ -234,8 +234,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/mc_rbdyn_urdf/
 soft_mkcd build
@@ -243,8 +243,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/Tasks/
 soft_mkcd build
@@ -252,8 +252,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 echo "building catkin workspace"
 cd $SRC_DIR/catkin_ws/
@@ -269,8 +269,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/mc_hrp5_p/
 soft_mkcd build
@@ -278,8 +278,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/mc_openrtm/
 soft_mkcd build
@@ -287,8 +287,8 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-make -j $NUBMBER_OF_CORES
-$makeLevel -j$NUBMBER_OF_CORES install
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 echo "cloning mc_rtc_ros"
 cd $SRC_DIR/catkin_ws/src

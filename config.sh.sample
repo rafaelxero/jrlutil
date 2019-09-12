@@ -5,7 +5,7 @@ source $DRCUTIL_DIR/config.sh
 cd $scriptDirectory
 export SRC_DIR=$HOME/src/jrl
 export INSTALL_DIR=$HOME/openrtp
-export NUBMBER_OF_CORES=$MAKE_THREADS_NUMBER
+export NUMBER_OF_CORES=$MAKE_THREADS_NUMBER
 export BUILD_TYPE=Release
 
 #Specify REBUILD_HMC build to 1 only if you want hmc to be rebuilt
