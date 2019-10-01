@@ -17,7 +17,7 @@ set -E -o pipefail
 
 CMAKE_OPT="-DBUILD_MULTI_CONTACT_MOTION_SOLVER=ON"
 export CMAKE_ADDITIONAL_OPTIONS=$CMAKE_OPT
-export CXXFLAGS="$CXXFLAGS -std=c++11"
+#export CXXFLAGS="$CXXFLAGS -std=c++11"
 echo "entering $DRCUTIL_DIR"
 cd $DRCUTIL_DIR
 source config.sh
