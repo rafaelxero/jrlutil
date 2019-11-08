@@ -92,6 +92,8 @@ failsafe_cmd git remote add rafaelxero    https://github.com/rafaelxero/Tasks
 git fetch rafaelxero
 cond_checkout topic/HRG rafaelxero/topic/HRG
 
+cd $SRC_DIR
+clone_repo https://github.com/humanoid-path-planner/ hpp-spline
 
 cd $SRC_DIR
 if [ "$(rosversion -d)" != "kinetic" ]
@@ -252,6 +254,16 @@ cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
+
+cd $SRC_DIR/hpp-spline
+soft_mkcd build
+cmake -B. -H..
+cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
+cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
+cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
+cmake -D BUILD_PYTHON_INTERFACE=OFF .
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 

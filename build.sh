@@ -58,6 +58,10 @@ cd $SRC_DIR/Tasks/build
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
+cd $SRC_DIR/hpp-spline/build
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
+
 cd $SRC_DIR/mc_rtc/build
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install

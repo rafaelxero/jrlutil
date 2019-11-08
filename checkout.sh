@@ -33,6 +33,8 @@ cd $SRC_DIR/mc_rbdyn_urdf
 git pull
 cd $SRC_DIR/Tasks
 git pull
+cd $SRC_DIR/hpp-spline
+git pull
 
 #Pull catkin workspace repos
 cd $SRC_DIR/catkin_ws/src/hrp2_drc
