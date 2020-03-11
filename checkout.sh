@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 RUNNINGSCRIPT="$0"
 FILENAME="$(echo $(cd $(dirname "$BASH_SOURCE") && pwd -P)/$(basename "$BASH_SOURCE"))"
 err_report() {
@@ -15,6 +14,7 @@ source config.sh
 #pull changes
 git config --global url."https://gite.lirmm.fr/".insteadOf git@gite.lirmm.fr:
 git config --global credential.helper cache #allows for only a single login
+
 cd $SRC_DIR/Eigen3ToPython
 git pull
 git submodule update --recursive
@@ -30,6 +30,7 @@ git submodule update --recursive
 cd $SRC_DIR/sch-core-python 
 git pull
 git submodule update --recursive
+
 cd $SRC_DIR/SpaceVecAlg 
 git pull
 git submodule update --recursive
@@ -46,19 +47,10 @@ cd $SRC_DIR/hpp-spline
 git pull
 git submodule update --recursive
 
-#Pull catkin workspace repos
-cd $SRC_DIR/catkin_ws/src/hrp2_drc
+cd $SRC_DIR/hrp5_p_description
 git pull
 git submodule update --recursive
-cd $SRC_DIR/catkin_ws/src/hrp5/hrp5_p_description
-git pull
-git submodule update --recursive
-#cd $SRC_DIR/catkin_ws/src/hrp4
-#git pull
-cd $SRC_DIR/catkin_ws/src/mc_rtc_ros_data
-git pull
-git submodule update --recursive
-cd $SRC_DIR/catkin_ws/src/mc_rtc_ros
+cd $SRC_DIR/mc_rtc_ros_data
 git pull
 git submodule update --recursive
 
