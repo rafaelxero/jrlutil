@@ -64,7 +64,7 @@ cd $SRC_DIR/hrp5_p_description/build
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/mc_rtc_ros_data/build
+cd $SRC_DIR/mc_rtc_data/build
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 

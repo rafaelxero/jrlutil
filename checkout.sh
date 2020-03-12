@@ -50,7 +50,7 @@ git submodule update --recursive
 cd $SRC_DIR/hrp5_p_description
 git pull
 git submodule update --recursive
-cd $SRC_DIR/mc_rtc_ros_data
+cd $SRC_DIR/mc_rtc_data
 git pull
 git submodule update --recursive
 

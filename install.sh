@@ -90,7 +90,7 @@ clone_repo https://github.com/humanoid-path-planner/ hpp-spline
 cd $SRC_DIR
 clone_repo https://gite.lirmm.fr/mc-hrp5/ hrp5_p_description
 cd $SRC_DIR
-clone_repo https://gite.lirmm.fr/multi-contact/ mc_rtc_ros_data
+clone_repo https://github.com/jrl-umi3218/ mc_rtc_data
 
 cd $SRC_DIR/
 git config --global url."https://gite.lirmm.fr/".insteadOf git@gite.lirmm.fr:
@@ -226,13 +226,17 @@ $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/hrp5_p_description/
 soft_mkcd build
+cmake -B. -H..
+cmake -D DISABLE_ROS="ON"
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/mc_rtc_ros_data/
+cd $SRC_DIR/mc_rtc_data/
 soft_mkcd build
+cmake -B. -H..
+cmake -D DISABLE_ROS="ON"
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
