@@ -239,7 +239,7 @@ $makeLevel -j$NUMBER_OF_CORES install
 cd $SRC_DIR/hrp5_p_description/
 soft_mkcd build
 cmake -B. -H..
-cmake -D DISABLE_ROS="ON"
+cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
@@ -248,7 +248,7 @@ $makeLevel -j$NUMBER_OF_CORES install
 cd $SRC_DIR/mc_rtc_data/
 soft_mkcd build
 cmake -B. -H..
-cmake -D DISABLE_ROS="ON"
+cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
