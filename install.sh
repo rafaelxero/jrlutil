@@ -110,8 +110,10 @@ cd $SRC_DIR
 
 echo "Build"
 
-sudo apt-get install libgeos++-dev
+sudo apt-get install libgeos++-dev python-pip libyaml-cpp-dev 
 pip install nose
+pip install Cython 
+pip install coverage
 
 
 export PBUI=OFF
@@ -141,9 +143,7 @@ cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-sudo apt-get install python-pip
-pip install Cython 
-pip install coverage
+
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
