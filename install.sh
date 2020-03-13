@@ -103,13 +103,18 @@ clone_repo https://gite.lirmm.fr/mc-hrp5/ mc_hrp5_p
 cd mc_hrp5_p/
 git checkout topic/HRG
 cd ..
-clone_repo  https://gite.lirmm.fr/multi-contact/ mc_openrtm
-cd mc_openrtm/
-git checkout topic/HRG
+
+clone_repo  https://github.com/jrl-umi3218/ mc_openrtm
+
+cd $SRC_DIR
 
 echo "Build"
 
-sudo apt-get install libgeos++-dev
+sudo apt-get install libgeos++-dev python-pip libyaml-cpp-dev 
+pip install nose
+pip install Cython 
+pip install coverage
+
 
 export PBUI=OFF
 makeLevel="sudo make"
@@ -138,9 +143,7 @@ cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
-sudo apt-get install python-pip
-pip install Cython 
-pip install coverage
+
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
@@ -236,7 +239,7 @@ $makeLevel -j$NUMBER_OF_CORES install
 cd $SRC_DIR/hrp5_p_description/
 soft_mkcd build
 cmake -B. -H..
-cmake -D DISABLE_ROS="ON"
+cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
@@ -245,7 +248,7 @@ $makeLevel -j$NUMBER_OF_CORES install
 cd $SRC_DIR/mc_rtc_data/
 soft_mkcd build
 cmake -B. -H..
-cmake -D DISABLE_ROS="ON"
+cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
@@ -255,7 +258,7 @@ echo "building mc_rtc"
 cd $SRC_DIR/mc_rtc/
 soft_mkcd build
 cmake -B. -H..
-cmake -D DISABLE_ROS="ON"
+cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
