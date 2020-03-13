@@ -58,6 +58,7 @@ echo "Clone repos"
 
 clone_repo https://github.com/jrl-umi3218/ Eigen3ToPython
 clone_repo https://github.com/jrl-umi3218/ eigen-qld
+clone_repo https://github.com/jrl-umi3218/ eigen-quadprog
 clone_repo https://gite.lirmm.fr/multi-contact/ eigen-lssol #Requires login
 clone_repo https://github.com/leethomason/ tinyxml2 
 
@@ -148,6 +149,14 @@ soft_mkcd build
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
+cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
+
+cd $SRC_DIR/eigen-quadprog/
+soft_mkcd build
+cmake ..
+cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install

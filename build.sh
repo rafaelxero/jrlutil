@@ -28,6 +28,10 @@ cd $SRC_DIR/eigen-qld/build
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
+cd $SRC_DIR/eigen-quadprog/build
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
+
 cd $SRC_DIR/eigen-lssol/build
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install

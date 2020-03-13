@@ -21,6 +21,9 @@ git submodule update --recursive
 cd $SRC_DIR/eigen-qld
 git pull
 git submodule update --recursive
+cd $SRC_DIR/eigen-quadprog
+git pull
+git submodule update --recursive
 cd $SRC_DIR/eigen-lssol #Requires login
 git pull
 git submodule update --recursive
