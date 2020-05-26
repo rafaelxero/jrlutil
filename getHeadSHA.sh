@@ -21,13 +21,13 @@ getSHA() {
 	echo -n "$dir_name ... " | tee -a $SRC_DIR/jrlutilHeadSHA.log
 	sha=$(git show -s --format=%H)
 	 
-	echo -n "$sha" | tee -a $SRC_DIR/headSHA.log
+	echo -n "$sha" | tee -a $SRC_DIR/jrlutilHeadSHA.log
 	
 	if [[ $(git diff --stat) != '' ]]; then
-          echo -n ' ... dirty' | tee -a $SRC_DIR/headSHA.log
+          echo -n ' ... dirty' | tee -a $SRC_DIR/jrlutilHeadSHA.log
         fi
         #insert new line
-        echo  | tee -a $SRC_DIR/headSHA.log 
+        echo  | tee -a $SRC_DIR/jrlutilHeadSHA.log 
         cd ../
     fi
 }
