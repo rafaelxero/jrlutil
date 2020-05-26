@@ -16,9 +16,10 @@ echo "jrlutil headSHA" | tee $SRC_DIR/jrlutilHeadSHA.log
 
 getSHA() {
     dir_name=$1
+    package_name=$2
     if [ -e $dir_name ]; then
-        cd "$dir_name/"
-	echo -n "$dir_name ... " | tee -a $SRC_DIR/jrlutilHeadSHA.log
+        cd "$dir_name/$package_name"
+	echo -n "$package_name ... " | tee -a $SRC_DIR/jrlutilHeadSHA.log
 	sha=$(git show -s --format=%H)
 	 
 	echo -n "$sha" | tee -a $SRC_DIR/jrlutilHeadSHA.log
@@ -41,20 +42,20 @@ fi
 
 #Build 
 
-getSHA $SRC_DIR/Eigen3ToPython
-getSHA $SRC_DIR/eigen-qld
-getSHA $SRC_DIR/eigen-quadprog
-getSHA $SRC_DIR/eigen-lssol
-getSHA $SRC_DIR/tinyxml2
-getSHA $SRC_DIR/SpaceVecAlg
-getSHA $SRC_DIR/sch-core-python
-getSHA $SRC_DIR/RBDyn
-getSHA $SRC_DIR/mc_rbdyn_urdf
-getSHA $SRC_DIR/Tasks
-getSHA $SRC_DIR/hpp-spline
-getSHA $SRC_DIR/hrp5_p_description
-getSHA $SRC_DIR/mc_rtc_data
-getSHA $SRC_DIR/mc_rtc
-getSHA $SRC_DIR/mc_hrp5_p
-getSHA $SRC_DIR/mc_openrtm
+getSHA $SRC_DIR/ Eigen3ToPython
+getSHA $SRC_DIR/ eigen-qld
+getSHA $SRC_DIR/ eigen-quadprog
+getSHA $SRC_DIR/ eigen-lssol
+getSHA $SRC_DIR/ tinyxml2
+getSHA $SRC_DIR/ SpaceVecAlg
+getSHA $SRC_DIR/ sch-core-python
+getSHA $SRC_DIR/ RBDyn
+getSHA $SRC_DIR/ mc_rbdyn_urdf
+getSHA $SRC_DIR/ Tasks
+getSHA $SRC_DIR/ hpp-spline
+getSHA $SRC_DIR/ hrp5_p_description
+getSHA $SRC_DIR/ mc_rtc_data
+getSHA $SRC_DIR/ mc_rtc
+getSHA $SRC_DIR/ mc_hrp5_p
+getSHA $SRC_DIR/ mc_openrtm
 
