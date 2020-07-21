@@ -81,7 +81,7 @@ clone_repo https://github.com/jrl-umi3218/ RBDyn
 cd RBDyn/
 failsafe_cmd git remote add rafaelxero https://github.com/rafaelxero/RBDyn 
 git fetch rafaelxero
-cond_checkout topic/HRG rafaelxero/topic/HRG
+failsafe_cmd cond_checkout topic/HRG rafaelxero/topic/HRG
 cd $SRC_DIR
 
 clone_repo https://github.com/jrl-umi3218/ mc_rbdyn_urdf
@@ -89,7 +89,7 @@ clone_repo https://github.com/jrl-umi3218/ Tasks
 cd Tasks/
 failsafe_cmd git remote add rafaelxero    https://github.com/rafaelxero/Tasks
 git fetch rafaelxero
-cond_checkout topic/HRG rafaelxero/topic/HRG
+failsafe_cmd cond_checkout topic/HRG rafaelxero/topic/HRG
 
 cd $SRC_DIR
 clone_repo https://github.com/humanoid-path-planner/ hpp-spline
