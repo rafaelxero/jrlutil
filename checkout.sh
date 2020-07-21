@@ -15,6 +15,9 @@ source config.sh
 git config --global url."https://gite.lirmm.fr/".insteadOf git@gite.lirmm.fr:
 git config --global credential.helper cache #allows for only a single login
 
+
+cd $SRC_DIR/spdlog
+git pull
 cd $SRC_DIR/Eigen3ToPython
 git pull
 git submodule update --recursive

@@ -20,6 +20,10 @@ fi
 
 #Build 
 
+cd $SRC_DIR/spdlog/$BUILD_SUBDIR
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
+
 cd $SRC_DIR/Eigen3ToPython/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
