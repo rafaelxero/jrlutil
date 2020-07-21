@@ -129,7 +129,7 @@ wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
 unzip 1.1.5.zip
 #From nanomsg-1.1.5 README’s Quick Installation.
 cd nanomsg-1.1.5/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake --build .
@@ -138,7 +138,7 @@ echo "$makeLevel cmake --build . --target install"
 cmake --build . --target install
 
 cd $SRC_DIR/Eigen3ToPython/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -148,7 +148,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/eigen-qld/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -157,7 +157,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/eigen-quadprog/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
@@ -165,7 +165,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/eigen-lssol/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -174,7 +174,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR//tinyxml2/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -183,7 +183,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/SpaceVecAlg/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -192,7 +192,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/sch-core-python/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -201,7 +201,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/RBDyn/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -210,7 +210,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/mc_rbdyn_urdf/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -219,7 +219,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/Tasks/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -228,7 +228,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/hpp-spline/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -D BUILD_PYTHON_INTERFACE=OFF -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -237,7 +237,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/hrp5_p_description/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
@@ -246,7 +246,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/mc_rtc_data/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
@@ -256,7 +256,7 @@ $makeLevel -j$NUMBER_OF_CORES install
 
 echo "building mc_rtc"
 cd $SRC_DIR/mc_rtc/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D DISABLE_ROS="ON" .
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
@@ -266,7 +266,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/mc_hrp5_p/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
@@ -275,7 +275,7 @@ make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/mc_openrtm/
-soft_mkcd build
+soft_mkcd $BUILD_SUBDIR
 cmake -B. -H..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
