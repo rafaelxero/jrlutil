@@ -61,6 +61,7 @@ failsafe_cmd()
 
 echo "Clone repos"
 
+clone_repo https://github.com/gabime/ spdlog -b v1.6.1 
 clone_repo https://github.com/jrl-umi3218/ Eigen3ToPython
 clone_repo https://github.com/jrl-umi3218/ eigen-qld
 clone_repo https://github.com/jrl-umi3218/ eigen-quadprog
@@ -141,6 +142,13 @@ cmake --build .
 ctest .
 echo "$makeLevel cmake --build . --target install"
 cmake --build . --target install
+
+
+cd $SRC_DIR/ spdlog
+soft_mkcd $BUILD_SUBDIR
+cmake -DCMAKE_BUILD_TYPE=Release -DSPDLOG_BUILD_EXAMPLE:BOOL=OFF -DSPDLOG_BUILD_SHARED:BOOL=ON ..
+make
+sudo make install
 
 cd $SRC_DIR/Eigen3ToPython/
 soft_mkcd $BUILD_SUBDIR
