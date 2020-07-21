@@ -20,67 +20,67 @@ fi
 
 #Build 
 
-cd $SRC_DIR/Eigen3ToPython/build
+cd $SRC_DIR/Eigen3ToPython/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/eigen-qld/build
+cd $SRC_DIR/eigen-qld/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/eigen-quadprog/build
+cd $SRC_DIR/eigen-quadprog/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/eigen-lssol/build
+cd $SRC_DIR/eigen-lssol/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/tinyxml2/build
+cd $SRC_DIR/tinyxml2/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/SpaceVecAlg/build
+cd $SRC_DIR/SpaceVecAlg/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/sch-core-python/build
+cd $SRC_DIR/sch-core-python/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/RBDyn/build
+cd $SRC_DIR/RBDyn/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/mc_rbdyn_urdf/build
+cd $SRC_DIR/mc_rbdyn_urdf/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/Tasks/build
+cd $SRC_DIR/Tasks/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/hpp-spline/build
+cd $SRC_DIR/hpp-spline/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/hrp5_p_description/build
+cd $SRC_DIR/hrp5_p_description/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/mc_rtc_data/build
+cd $SRC_DIR/mc_rtc_data/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/mc_rtc/build
+cd $SRC_DIR/mc_rtc/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/mc_hrp5_p/build
+cd $SRC_DIR/mc_hrp5_p/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
-cd $SRC_DIR/mc_openrtm/build
+cd $SRC_DIR/mc_openrtm/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
