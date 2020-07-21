@@ -6,6 +6,7 @@ cd $scriptDirectory
 export SRC_DIR=$HOME/src/jrl
 export INSTALL_DIR=$HOME/openrtp
 export NUMBER_OF_CORES=$MAKE_THREADS_NUMBER
+export makeLevel="$SUDO make"
 export BUILD_TYPE=Release
 
 #Specify REBUILD_HMC build to 1 only if you want hmc to be rebuilt

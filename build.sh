@@ -12,12 +12,6 @@ set -E -o pipefail
 source config.sh
 scriptDirectory="$(pwd)"
 
-makeLevel="sudo make"
-if [[ $INSTALL_DIR == $HOME* ]]
-	then 
-		makeLevel="make"
-fi
-
 #Build 
 
 cd $SRC_DIR/spdlog/$BUILD_SUBDIR

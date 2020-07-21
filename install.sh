@@ -123,12 +123,7 @@ pip install coverage
 
 
 export PBUI=OFF
-makeLevel="sudo make"
-if [[ $INSTALL_DIR == $HOME* ]]
-	then 
-		export PBUI=ON
-		makeLevel="make"
-fi
+
 
 cd $SRC_DIR
 wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
@@ -140,8 +135,8 @@ cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake --build .
 ctest .
-echo "$makeLevel cmake --build . --target install"
-cmake --build . --target install
+echo "$SUDO cmake --build . --target install"
+$SUDO cmake --build . --target install
 
 
 cd $SRC_DIR/spdlog

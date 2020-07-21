@@ -34,13 +34,6 @@ getSHA() {
 }
 
 
-keLevel="sudo make"
-if [[ $INSTALL_DIR == $HOME* ]]
-	then 
-		makeLevel="make"
-fi
-
-#Build 
 
 
 getSHA $SRC_DIR/ spdlog
