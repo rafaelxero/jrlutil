@@ -33,9 +33,14 @@ clone_repo()
 {
     repoaddress="$1"
     reponame="$2"
+    repoaddress="$1"
+    reponame="$2"
+    all=( ${@} )
+    IFS=' '
+    repooptions="${all[*]:3}"
     
     if [ ! -d $reponame ]; then 
-        git clone --recursive $repoaddress$reponame
+        git clone --recursive $repoptions $repoaddress$reponame
     else
         echo "Directory $reponame exists, leaving"
     fi
