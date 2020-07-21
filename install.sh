@@ -144,11 +144,11 @@ echo "$makeLevel cmake --build . --target install"
 cmake --build . --target install
 
 
-cd $SRC_DIR/ spdlog
+cd $SRC_DIR/spdlog
 soft_mkcd $BUILD_SUBDIR
-cmake -DCMAKE_BUILD_TYPE=Release -DSPDLOG_BUILD_EXAMPLE:BOOL=OFF -DSPDLOG_BUILD_SHARED:BOOL=ON ..
-make
-sudo make install
+cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" -DSPDLOG_BUILD_EXAMPLE:BOOL=OFF -DSPDLOG_BUILD_SHARED:BOOL=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/Eigen3ToPython/
 soft_mkcd $BUILD_SUBDIR
