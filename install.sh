@@ -116,7 +116,7 @@ cd $SRC_DIR
 
 echo "Build"
 
-sudo apt-get install libgeos++-dev python-pip libyaml-cpp-dev 
+sudo apt-get install libgeos++-dev python-pip libyaml-cpp-dev gfortran
 pip install nose
 pip install Cython 
 pip install coverage
