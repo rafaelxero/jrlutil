@@ -38,6 +38,10 @@ cd $SRC_DIR/tinyxml2/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install
 
+cd $SRC_DIR/jrl-qp/$BUILD_SUBDIR
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
+
 cd $SRC_DIR/SpaceVecAlg/$BUILD_SUBDIR
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install

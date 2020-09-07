@@ -22,6 +22,7 @@ rm -rf  $SRC_DIR/Eigen3ToPython/$BUILD_SUBDIR
 rm -rf  $SRC_DIR/eigen-qld/$BUILD_SUBDIR
 rm -rf  $SRC_DIR/eigen-lssol/$BUILD_SUBDIR
 rm -rf  $SRC_DIR/tinyxml2/$BUILD_SUBDIR
+rm -rf  $SRC_DIR/jrl-qp/$BUILD_SUBDIR
 rm -rf  $SRC_DIR/SpaceVecAlg/$BUILD_SUBDIR
 rm -rf  $SRC_DIR/sch-core-python/$BUILD_SUBDIR
 rm -rf  $SRC_DIR/RBDyn/$BUILD_SUBDIR

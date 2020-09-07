@@ -34,6 +34,9 @@ $makeLevel -j$NUMBER_OF_CORES clean
 cd $SRC_DIR/tinyxml2/$BUILD_SUBDIR
 $makeLevel -j$NUMBER_OF_CORES clean
 
+cd $SRC_DIR/jrl-qp/$BUILD_SUBDIR
+$makeLevel -j$NUMBER_OF_CORES clean
+
 cd $SRC_DIR/SpaceVecAlg/$BUILD_SUBDIR
 $makeLevel -j$NUMBER_OF_CORES clean
 

@@ -52,6 +52,7 @@ cond_checkout()
     localbranch="$1"
     trackedbranch="$2"
     git checkout -b $localbranch --track $trackedbranch ||  git checkout  $localbranch   
+    git submodule update --recursive
 }
 
 failsafe_cmd()
@@ -67,6 +68,11 @@ clone_repo https://github.com/jrl-umi3218/ eigen-qld
 clone_repo https://github.com/jrl-umi3218/ eigen-quadprog
 clone_repo https://gite.lirmm.fr/multi-contact/ eigen-lssol #Requires login
 clone_repo https://github.com/leethomason/ tinyxml2 
+
+clone_repo git@github.com:mehdi-benallegue/jrl-qp
+cd jrl-qp
+cond_checkout topic/c++_11 origin/topic/c++_11
+cd $SRC_DIR
 
 clone_repo https://github.com/jrl-umi3218/ sch-core-python
 cd sch-core-python/
@@ -127,7 +133,7 @@ export PBUI=OFF
 
 cd $SRC_DIR
 wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
-unzip 1.1.5.zip
+unzip -o 1.1.5.zip
 #From nanomsg-1.1.5 README’s Quick Installation.
 cd nanomsg-1.1.5/
 soft_mkcd $BUILD_SUBDIR
@@ -186,6 +192,15 @@ soft_mkcd $BUILD_SUBDIR
 cmake ..
 cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
 cmake -D PYTHON_BINDING_USER_INSTALL=$PBUI .
+cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
+make -j $NUMBER_OF_CORES
+$makeLevel -j$NUMBER_OF_CORES install
+
+cd $SRC_DIR/jrl-qp
+soft_mkcd $BUILD_SUBDIR
+cmake ..
+cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
+cmake -D BUILD_BENCHMARKS="OFF" .
 cmake -D CMAKE_BUILD_TYPE=$BUILD_TYPE .
 make -j $NUMBER_OF_CORES
 $makeLevel -j$NUMBER_OF_CORES install

@@ -33,6 +33,10 @@ git submodule update --recursive
 cd $SRC_DIR/tinyxml2 
 git pull
 git submodule update --recursive
+cd $SRC_DIR/jrl-qp
+git pull
+git submodule update --recursive
+
 cd $SRC_DIR/sch-core-python 
 git pull
 git submodule update --recursive

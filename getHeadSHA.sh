@@ -42,6 +42,7 @@ getSHA $SRC_DIR/ eigen-qld
 getSHA $SRC_DIR/ eigen-quadprog
 getSHA $SRC_DIR/ eigen-lssol
 getSHA $SRC_DIR/ tinyxml2
+getSHA $SRC_DIR/ jrl-qp
 getSHA $SRC_DIR/ SpaceVecAlg
 getSHA $SRC_DIR/ sch-core-python
 getSHA $SRC_DIR/ RBDyn
