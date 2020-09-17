@@ -69,7 +69,7 @@ clone_repo https://github.com/jrl-umi3218/ eigen-quadprog
 clone_repo https://gite.lirmm.fr/multi-contact/ eigen-lssol #Requires login
 clone_repo https://github.com/leethomason/ tinyxml2 
 
-clone_repo git@github.com:mehdi-benallegue/jrl-qp
+clone_repo https://github.com/mehdi-benallegue/ jrl-qp
 cd jrl-qp
 cond_checkout topic/c++_11 origin/topic/c++_11
 cd $SRC_DIR
