@@ -62,7 +62,7 @@ failsafe_cmd()
 
 echo "Clone repos"
 
-clone_repo https://github.com/gabime/ spdlog -b v1.6.1 
+#clone_repo https://github.com/gabime/ spdlog -b v1.6.1 
 clone_repo https://github.com/jrl-umi3218/ Eigen3ToPython
 clone_repo https://github.com/jrl-umi3218/ eigen-qld
 clone_repo https://github.com/jrl-umi3218/ eigen-quadprog
@@ -122,34 +122,34 @@ cd $SRC_DIR
 
 echo "Build"
 
-sudo apt-get install libgeos++-dev python-pip libyaml-cpp-dev gfortran
-pip install nose
-pip install Cython 
-pip install coverage
+#sudo apt-get install libgeos++-dev python-pip libyaml-cpp-dev gfortran
+#pip install nose
+#pip install Cython 
+#pip install coverage
 
 
 export PBUI=OFF
 
 
-cd $SRC_DIR
-wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
-unzip -o 1.1.5.zip
-#From nanomsg-1.1.5 README’s Quick Installation.
-cd nanomsg-1.1.5/
-soft_mkcd $BUILD_SUBDIR
-cmake ..
-cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
-cmake --build .
-ctest .
-echo "$SUDO cmake --build . --target install"
-$SUDO cmake --build . --target install
+#cd $SRC_DIR
+#wget https://github.com/nanomsg/nanomsg/archive/1.1.5.zip
+#unzip -o 1.1.5.zip
+##From nanomsg-1.1.5 README’s Quick Installation.
+#cd nanomsg-1.1.5/
+#soft_mkcd $BUILD_SUBDIR
+##cmake ..
+#cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" .
+#cmake --build .
+#ctest .
+#echo "$SUDO cmake --build . --target install"
+#$SUDO cmake --build . --target install
 
 
-cd $SRC_DIR/spdlog
-soft_mkcd $BUILD_SUBDIR
-cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" -DSPDLOG_BUILD_EXAMPLE:BOOL=OFF -DSPDLOG_BUILD_SHARED:BOOL=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
-make -j $NUMBER_OF_CORES
-$makeLevel -j$NUMBER_OF_CORES install
+#cd $SRC_DIR/spdlog
+#soft_mkcd $BUILD_SUBDIR
+#cmake -D CMAKE_INSTALL_PREFIX="$INSTALL_DIR" -DSPDLOG_BUILD_EXAMPLE:BOOL=OFF -DSPDLOG_BUILD_SHARED:BOOL=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
+#make -j $NUMBER_OF_CORES
+#$makeLevel -j$NUMBER_OF_CORES install
 
 cd $SRC_DIR/Eigen3ToPython/
 soft_mkcd $BUILD_SUBDIR

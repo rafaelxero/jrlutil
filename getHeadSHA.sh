@@ -36,7 +36,7 @@ getSHA() {
 
 
 
-getSHA $SRC_DIR/ spdlog
+#getSHA $SRC_DIR/ spdlog
 getSHA $SRC_DIR/ Eigen3ToPython
 getSHA $SRC_DIR/ eigen-qld
 getSHA $SRC_DIR/ eigen-quadprog
