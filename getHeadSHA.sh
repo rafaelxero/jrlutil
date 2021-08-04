@@ -21,8 +21,9 @@ getSHA() {
         cd "$dir_name/$package_name"
 	echo -n "$package_name ... " | tee -a $SRC_DIR/jrlutilHeadSHA.log
 	sha=$(git show -s --format=%H)
+        branch=$(git branch | grep \* | cut -d ' ' -f2)
 	 
-	echo -n "$sha" | tee -a $SRC_DIR/jrlutilHeadSHA.log
+	echo -n "$branch ... $sha" | tee -a $SRC_DIR/jrlutilHeadSHA.log
 	
 	if [[ $(git diff --stat) != '' ]]; then
           echo -n ' ... dirty' | tee -a $SRC_DIR/jrlutilHeadSHA.log
