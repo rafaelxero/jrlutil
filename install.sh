@@ -75,11 +75,6 @@ cond_checkout topic/c++_11 origin/topic/c++_11
 cd $SRC_DIR
 
 clone_repo https://github.com/jrl-umi3218/ sch-core-python
-cd sch-core-python/
-failsafe_cmd git remote add rafaelxero https://github.com/rafaelxero/sch-core-python
-git fetch rafaelxero
-cond_checkout topic/HRG rafaelxero/topic/HRG
-cd $SRC_DIR
 
 clone_repo https://github.com/jrl-umi3218/ SpaceVecAlg
 
